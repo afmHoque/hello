@@ -11,5 +11,18 @@ public class Permutation {
          *
          */
 
+        permutation("", "ABC");
+    }
+
+    private static void permutation(String prefix, String str) {
+
+        int y = str.length();
+        if (y==0) {
+            System.out.println(prefix);
+        } else {
+            for(int i=0; i<y;i++) {
+                permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, y));
+            }
+        }
     }
 }

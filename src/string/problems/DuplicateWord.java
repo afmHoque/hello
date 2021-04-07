@@ -12,6 +12,22 @@ public class DuplicateWord {
          */
 
 
+        String st = "Java is a programming Language. Java is also an Island of Indonesia. Java is widely used language";
+
+        Map<String,Integer>WrdMap =new HashMap<>();
+        String[]splitWords =st.split(" ");
+
+        for(String word:splitWords) {
+            Integer count =WrdMap.get(splitWords);
+            if(count ==null) {
+                count =0;
+
+            }
+            WrdMap.put(word,count +1);
+        }
+        for (Map.Entry<String,Integer> s:WrdMap.entrySet()) {
+            System.out.println(s.getKey() + " :" +s.getValue()+"time(s");
+        }
     }
 
 }
